@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+#root{
+    height: 100%;
+    width: 100%;
+}
+.form-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+    position: relative;
+    background-color: #000;
+}
+
+
+.form-container > form,
+.page {
+    height: 50%;
+    width: 30%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 2px #0005;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    transform-style: preserve-3d;
+    left: 50%;
+    background-color: #fff;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    /* backface-visibility: hidden; */
+}
+.page {
+    /* background-color: white; */
+
+    transform-origin: left;
+    animation: rotate 2s ease-in-out forwards;
+    z-index: 2;
+}
+
+
+
+.page::before{
+    content: "";
+       height: 100%;
+    width: 100%;
+        background-color: #fff;
+    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyejJiOXcxYXlja2h6MGV1bnYzeXF6MGE3enUyeGlxamVxZTRmdTMzdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PNf2Ke7gn6oDK/source.gif");
+    background-size: 0% 0%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: showbg 500ms 1s linear forwards;
+}
+.falligEffect{
+    height: 50px;
+    width: 50px;
+    font-size: 32px;
+    position: fixed;
+    z-index: 20;
+    animation: fall 2s linear forwards;
+}
+.input-conatiner:not(.input-conatiner:first-child){
+    width: 100%;
+    height: 40px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 2px;
+}
+.input-conatiner:first-child{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-conatiner>input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 0px 5px;
+    outline: none;
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+.button-container>button{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+}
+.star{
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: white;
+     transition: transform 0.4s ease;
+    position: fixed ;
+    z-index: 1;
+}
+.start-blinking{
+    animation: blink 1s linear infinite ;
+
+}
+
+.home-container{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    padding: 80px;
+
+}
+.home-container>div:first-child{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.home-container>div:first-child>form{
+    height: 50%;
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    background-color: #777;
+    border: 3px solid #fff;
+    outline: 2px solid #fff;
+    font-weight: 700;
+}
+.home-container input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-weight: 700;
+    color: #fff;
+    outline: none;
+    padding: 0px 10px;
+    background-color: transparent;
+}
+.home-container button{
+    width: 100px;
+    height: 100%;
+    font-size: 28px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:all 100ms linear;
+}
+.home-container button:active{
+    transform: scale(0.8);
+    background-color: rgb(242, 77, 77);
+    color: #000;
+}
+.home-container input::placeholder{
+       color: #fff;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.display-images{
+    width: 100%;
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.display-images .card{
+    width: 300px;
+    height: 300px;
+    background-color: #777;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 1s linear;
+
+}
+
+
+.display-images .card img{
+    height: 100%;
+    width: 100%;
+    transition:all 300ms linear;
+    overflow: hidden;
+}
+.display-images .card img:hover{
+    transform: scale(1.1);
+}
+.display-images .card:hover  > h3{
+    display: block;
+     height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+.display-images .card > h3{
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0,0.5);
+    height: 0%;
+    width: 0%;
+    color: #fff;
+    top: 0;
+    left: 0;
+    transition:all 500ms linear;
+}
+
+.card:hover{
+     transform: rotateY(360deg);
+}
+
+.home-section{
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    overflow-y: scroll;
+}
+.home-section nav{
+    padding: 10px 50px;
+    height: 60px;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    gap: 50px;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+.home-section nav>div:first-child{
+    height: 100%;
+    width: 150px;
+}
+.home-section nav>div{
+    display: flex;
+    gap: 50px;
+}
+.home-section nav a{
+    text-decoration: none;
+    color: #ff0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(-180deg);
+    }
+}
+
+@keyframes blink {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+
+    }100%{
+        transform: scale(2);
+        opacity: 0;
+     
+    }
+}
+
+
+@keyframes fall {
+    0%{
+        transform: translateY(0px)scale(1);
+  
+        opacity: 1;
+        
+    }100%{
+        transform: translateY(300px)scale(1.5);
+        opacity: 0;
+     
+    }
+}
+
+
+@keyframes showbg {
+    0%{
+        background-size: 0% 0%;
+    }100%{
+        
+        background-size: 100% 100%;
+    }
+}
