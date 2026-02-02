@@ -6,6 +6,13 @@
       "email": "N@gmail.com",
       "password": "N@321",
       "confirmPassword": "N@321"
+    },
+    {
+      "id": "d3ca",
+      "name": "Vinay",
+      "email": "vinay@gmail.com",
+      "password": "V@3",
+      "confirmPassword": "V@3"
     }
   ]
 }
