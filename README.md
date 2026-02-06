@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d234bd6b-3b2a-4a93-a000-f90772e6dd1a" /># 🚀 NASA Image Explorer
+# 🚀 NASA Image Explorer
 
 A responsive web application that lets users explore daily space images from NASA’s Astronomy Picture of the Day (APOD) API.
 
